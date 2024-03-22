@@ -1,6 +1,6 @@
 import React from 'react';
 import { View , Text, StyleSheet, Button, Image, TouchableOpacity } from 'react-native';
-
+import { AppContextProvider, useAppContext } from '../../Global/Context';
 
 const HomeScreen = (props: { navigation: { navigate: (arg0: string) => void; }; }) => {
 
@@ -8,10 +8,12 @@ const HomeScreen = (props: { navigation: { navigate: (arg0: string) => void; }; 
         props.navigation.navigate('DetailsScreen');
     }
 
-  
+ 
+    const state = useAppContext();
    
 
     return (
+        
         <View style={styles.viewStyle}>
             <Image
                 style={styles.ImageStyele}
@@ -24,6 +26,7 @@ const HomeScreen = (props: { navigation: { navigate: (arg0: string) => void; }; 
                 <Text>Go to Details</Text>
             </TouchableOpacity>
             
+           
             
         </View>
     );
